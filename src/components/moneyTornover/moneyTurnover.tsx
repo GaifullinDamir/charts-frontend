@@ -1,8 +1,10 @@
 
 const MoneyTurnover = () => {
     return (
-        <div>
-            
+        <div className="money-turnover">
+            <div className="money-turnover__wraapper">
+                
+            </div>
         </div>
     );
 };
