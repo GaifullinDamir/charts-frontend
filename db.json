@@ -1,6 +1,20 @@
 {
     "moneyTurnover": [
         {
+            "id": "142ca8f7-6168-404c-8cc9-dec49d4814c8",
+            "revenue": 500521,
+            "cash": 300000 ,
+            "nonCash": 100000,
+            "creditCards": 100521,
+            "averageCheck": 1300,
+            "averageGuest": 1200,
+            "deletionAfterPayment": 1000,
+            "deletionBeforePayment": 1300,
+            "numberOfChecks": 34,
+            "numberOfGuests": 34,
+            "date": "2024-08-13"
+        },
+        {
             "id": "d5ccd96e-f0b2-450f-ba6c-c147dc6fb627",
             "revenue": 500521,
             "cash": 300000 ,
@@ -31,7 +45,7 @@
         {
             "id": "2b71b457-7277-4ecf-bcf6-383005f79c75",
             "revenue": 500521,
-            "cash": 300000 ,
+            "cash": 400000 ,
             "nonCash": 100000,
             "creditCards": 100521,
             "averageCheck": 1300,
@@ -130,7 +144,7 @@
 
             "id": "228c235d-3d08-4dd0-9b54-8668c69b8082",
             "revenue": 500521,
-            "cash": 300000 ,
+            "cash": 450000 ,
             "nonCash": 100000,
             "creditCards": 100521,
             "averageCheck": 1300,

@@ -1,7 +1,7 @@
 import { TableCell } from "../";
 import { ITableRow } from "../../models";
 
-const TableRow = ({indicator, today, tomarrow, week}: ITableRow) => {
+const TableRow = ({indicator, today, yesterday, currentDayOfTheWeek}: ITableRow) => {
 
     return (
         <div className='table-row'>
@@ -9,15 +9,15 @@ const TableRow = ({indicator, today, tomarrow, week}: ITableRow) => {
                 value={indicator}
                 className="table-row__first-item"/>
             <TableCell
-                value={`${today}`}
-                className="table-row"/>
+                value={`${today}`}/>
             <TableCell
-                value={`${tomarrow.value}`}
-                addition={`${tomarrow.addition}%`}
-                className={`table-row table-row_${tomarrow.addition > 0 ? 'success' : tomarrow.addition < 0 ? 'danger' : 'neutral' }`}/>
+                value={`${yesterday.value}`}
+                addition={yesterday.addition}
+                className={yesterday.addition ? `table-cell_${yesterday.addition > 0 ? 'success' : yesterday.addition < 0 ? 'danger' : 'neutral'}` : ''}/>
             <TableCell
-                value={`${week}`}
-                className="table-row"/>
+                value={`${currentDayOfTheWeek.value}`}
+                addition={currentDayOfTheWeek.addition}
+                className={currentDayOfTheWeek.addition ? `table-cell_${currentDayOfTheWeek.addition > 0 ? 'success' : currentDayOfTheWeek.addition < 0 ? 'danger' : 'neutral'}` : ''}/>
         </div>
     );
 };

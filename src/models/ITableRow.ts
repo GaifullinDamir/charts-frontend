@@ -1,9 +1,12 @@
 export interface ITableRow {
     indicator: string;
-    today: number;
-    tomarrow: {
-        value: number;
-        addition: number;
+    today: number | string;
+    yesterday: {
+        value: number | string;
+        addition?: number;
     };
-    week: number;
+    currentDayOfTheWeek: {
+        value: number | string;
+        addition?: number;
+    };
 }
