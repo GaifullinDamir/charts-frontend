@@ -1,0 +1,29 @@
+@import './base/normalize';
+@import './base/variables';
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+}
+
+.container {
+    height: 100%;
+    width: 991px;
+}
+
+@import './blocks/components/tableCell';
+@import './blocks/components/tableRow';
+@import './blocks/components/table';
+@import './blocks/components/moneyTornover';
+@import './blocks/pages/mainPage';

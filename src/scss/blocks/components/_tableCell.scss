@@ -1,0 +1,55 @@
+.table-cell {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 150px;
+    height: 50px;
+    background: var( --background-gray);
+    color: var(--font-color-base);
+    padding: 5px;
+    margin: 3px;
+    overflow: hidden;
+
+    &__first-column {
+        width: 350px;
+        padding-left: 10px;
+    }
+    &__second-column {
+        background: var(--background-blue);
+        width: 150px;
+        text-align: right;
+        padding-right: 25px;
+    }
+    &__third-column {
+        width: 150px;
+        text-align: right;
+        // padding-right: 75px;
+    }
+    &__fourth-column {
+        width: 175px;
+        text-align: right;
+        padding-right: 25px;
+    }
+    &__value {
+        width: 100%;
+        overflow: hidden;
+    }
+    &__addition {
+        overflow: hidden;
+        position: absolute;
+        right: 20px;
+        width: 50px;
+    }
+    &_neutral {
+        background: var( --background-gray);
+        color: var(--font-color-base);
+    }
+    &_success {
+        background: var( --background-success);
+        color: var(--font-color-success);
+    }
+    &_danger {
+        background: var(--background-danger);
+        color: var(--font-color-danger);
+    }
+}

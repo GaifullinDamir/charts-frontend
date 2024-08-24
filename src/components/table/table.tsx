@@ -44,7 +44,7 @@ const Table = ({data}: TableProps) => {
                 const today = data[0][key as keyof typeof indicators];
                 const yesterday = {
                     value: data[1][key as keyof typeof indicators],
-                    addition: Math.trunc((today - data[0][key as keyof typeof indicators]) / today * 100)
+                    addition: Math.trunc((today - data[1][key as keyof typeof indicators]) / today * 100)
                 };
                 const currentDayOfTheWeek = {
                     value: data[7][key as keyof typeof indicators],

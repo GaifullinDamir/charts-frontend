@@ -7,17 +7,17 @@ const TableRow = ({indicator, today, yesterday, currentDayOfTheWeek}: ITableRow)
         <div className='table-row'>
             <TableCell
                 value={indicator}
-                className="table-row__first-item"/>
+                className="table-cell__first-column"/>
             <TableCell
-                value={`${today}`}/>
+                value={`${today}`}
+                className="table-cell__second-column"/>
             <TableCell
                 value={`${yesterday.value}`}
-                addition={yesterday.addition}
-                className={yesterday.addition ? `table-cell_${yesterday.addition > 0 ? 'success' : yesterday.addition < 0 ? 'danger' : 'neutral'}` : ''}/>
+                addition={yesterday.addition || yesterday.addition === 0 ? `${yesterday.addition}%` : undefined}
+                className={`table-cell__third-column ${yesterday.addition ? `table-cell_${yesterday.addition > 0 ? 'success' : yesterday.addition < 0 ? 'danger' : 'neutral'}` : ''}`}/>
             <TableCell
                 value={`${currentDayOfTheWeek.value}`}
-                addition={currentDayOfTheWeek.addition}
-                className={currentDayOfTheWeek.addition ? `table-cell_${currentDayOfTheWeek.addition > 0 ? 'success' : currentDayOfTheWeek.addition < 0 ? 'danger' : 'neutral'}` : ''}/>
+                className={`table-cell__fourth-column ${currentDayOfTheWeek.addition ? `table-cell_${currentDayOfTheWeek.addition > 0 ? 'success' : currentDayOfTheWeek.addition < 0 ? 'danger' : 'neutral'}` : ''}`}/>
         </div>
     );
 };

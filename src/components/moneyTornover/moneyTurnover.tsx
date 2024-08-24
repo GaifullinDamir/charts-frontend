@@ -19,7 +19,7 @@ const MoneyTurnover = () => {
 
     return (
         <div className="money-turnover">
-            <div className="money-turnover__wraapper">
+            <div className="money-turnover__wrapper">
                 {!moneyTurnoverArrayIsLoading && !moneyTurnoverArrayError && moneyTurnoverArray.length && <Table data={moneyTurnoverArray}/>}
             </div>
         </div>

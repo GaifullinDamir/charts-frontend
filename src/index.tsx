@@ -1,3 +1,4 @@
+import './scss/index.scss';
 import { MainPage } from "./pages";
 
 
