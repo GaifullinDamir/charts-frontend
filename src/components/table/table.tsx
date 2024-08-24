@@ -82,10 +82,8 @@ const Table = ({data}: TableProps) => {
 
     return (
         <div className="table">
-            <div className="table__container">
-                <TableHeader/>
-                {tableRows}
-            </div>
+            <TableHeader/>
+            {tableRows}
         </div>
     );
 };

@@ -3,6 +3,8 @@
 
 * {
     font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 600;
     scroll-behavior: smooth;
 }
 
@@ -24,3 +26,8 @@ body {
     margin: 0 auto;
 }
 
+@import './blocks/components/tableHeader';
+@import './blocks/components/tableCell';
+@import './blocks/components/tableRow';
+
+@import './blocks/components/table';

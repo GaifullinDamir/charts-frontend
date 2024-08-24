@@ -2,7 +2,7 @@ import {MoneyTurnover, moneyTurnoverReducer, moneyTurnoverSlice} from "./moneyTo
 import { Table } from "./table";
 import { TableHeader } from "./tableHeader";
 import { TableRow } from "./tableRow";
-import { TableCellOneSlot, TableCellTwoSlot } from "./tableCell";
+import { TableCellOneSlot, TableCellTwoSlot, TableCellHeader } from "./tableCell";
 
 export {
     MoneyTurnover,
@@ -12,5 +12,6 @@ export {
     TableHeader,
     TableRow,
     TableCellOneSlot,
-    TableCellTwoSlot
+    TableCellTwoSlot,
+    TableCellHeader
 }

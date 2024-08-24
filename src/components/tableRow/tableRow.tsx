@@ -8,7 +8,7 @@ const TableRow = ({
     currentDayOfTheWeek
     }: ITableRow) => {
 
-    const getColorClassNameByPrecentage = (percentage: number) => percentage > 0 ? 'success' : percentage < 0 ? 'danger' : 'neutral'; 
+    const getColorByPercentage= (percentage: number) => percentage > 0 ? 'success' : percentage < 0 ? 'danger' : 'neutral'; 
 
     return (
         <div className='table-row'>
@@ -21,10 +21,10 @@ const TableRow = ({
             <TableCellTwoSlot
                 firstSlot={`${yesterday.value}`}
                 secondSlot={`${yesterday.addition}%`}
-                className= {`table-row__third-cell_${getColorClassNameByPrecentage(yesterday.addition)}`}/>
+                className= {`table-row__third-cell table-row-cell_${getColorByPercentage(yesterday.addition)}`}/>
             <TableCellOneSlot
                 firstSlot={`${currentDayOfTheWeek.value}`}
-                className={`table-row__fourth-cell_${getColorClassNameByPrecentage(currentDayOfTheWeek.addition)}`}/>
+                className={`table-row__fourth-cell table-row-cell_${getColorByPercentage(currentDayOfTheWeek.addition)}`}/>
         </div>
     );
 };
