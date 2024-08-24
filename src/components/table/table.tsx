@@ -1,4 +1,5 @@
 import { IMoneyTurnover, ITableRow } from "../../models";
+import { TableHeader } from "../tableHeader";
 import { TableRow } from "../tableRow";
 
 type TableProps = {
@@ -7,6 +8,14 @@ type TableProps = {
 }
 
 const Table = ({data}: TableProps) => {
+    
+    /**
+     * Функция, которая выдает процент роста x1 относительно x2.
+     * @param x1 {number} - первое число.
+     * @param x2 {number} - второе число.
+     * @returns {number}
+     */
+    const getPercentageOfGrowth = (x1: number, x2: number) => Math.trunc((x1 - x2) / x1 * 100);
     
     /**
      * Функция, которая конвертирует массив данных в данные для создания таблицы.
@@ -28,27 +37,19 @@ const Table = ({data}: TableProps) => {
             numberOfGuests: 'Количество гостей',
         };
 
-        const rowsData: ITableRow[] = [
-            {
-                indicator: 'Показатель',
-                today: 'Текущий день',
-                yesterday: {value: 'Вчера'},
-                currentDayOfTheWeek: {value: 'Этот день недели'}
-            }
-        ];
+        const rowsData: ITableRow[] = [];
 
         for (const key in indicators) {
             if (key !== 'id' && key !== 'date') {
-                
                 const indicator = indicators[key as keyof typeof indicators];
                 const today = data[0][key as keyof typeof indicators];
                 const yesterday = {
                     value: data[1][key as keyof typeof indicators],
-                    addition: Math.trunc((today - data[1][key as keyof typeof indicators]) / today * 100)
+                    addition: getPercentageOfGrowth(today, data[1][key as keyof typeof indicators])
                 };
                 const currentDayOfTheWeek = {
                     value: data[7][key as keyof typeof indicators],
-                    addition: Math.trunc((today - data[7][key as keyof typeof indicators]) / today * 100)
+                    addition: getPercentageOfGrowth(today, data[7][key as keyof typeof indicators])
                 };
                 rowsData.push(
                     {indicator, today, yesterday, currentDayOfTheWeek}
@@ -82,7 +83,8 @@ const Table = ({data}: TableProps) => {
     return (
         <div className="table">
             <div className="table__container">
-            {tableRows}
+                <TableHeader/>
+                {tableRows}
             </div>
         </div>
     );

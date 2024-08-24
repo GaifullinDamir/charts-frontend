@@ -3,10 +3,10 @@ export interface ITableRow {
     today: number | string;
     yesterday: {
         value: number | string;
-        addition?: number;
+        addition: number;
     };
     currentDayOfTheWeek: {
         value: number | string;
-        addition?: number;
+        addition: number;
     };
 }

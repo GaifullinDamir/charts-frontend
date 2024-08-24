@@ -1,5 +1,7 @@
-import TableCell from "./tableCell";
+import TableCellOneSlot from "./tableCellOneSlot";
+import TableCellTwoSlot from "./tableCellTwoSlot";
 
 export {
-    TableCell
+    TableCellOneSlot,
+    TableCellTwoSlot
 };

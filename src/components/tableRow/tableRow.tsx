@@ -1,23 +1,30 @@
-import { TableCell } from "../";
+import { TableCellOneSlot, TableCellTwoSlot } from "../";
 import { ITableRow } from "../../models";
 
-const TableRow = ({indicator, today, yesterday, currentDayOfTheWeek}: ITableRow) => {
+const TableRow = ({
+    indicator,
+    today,
+    yesterday,
+    currentDayOfTheWeek
+    }: ITableRow) => {
+
+    const getColorClassNameByPrecentage = (percentage: number) => percentage > 0 ? 'success' : percentage < 0 ? 'danger' : 'neutral'; 
 
     return (
         <div className='table-row'>
-            <TableCell
-                value={indicator}
-                className="table-cell__first-column"/>
-            <TableCell
-                value={`${today}`}
-                className="table-cell__second-column"/>
-            <TableCell
-                value={`${yesterday.value}`}
-                addition={yesterday.addition || yesterday.addition === 0 ? `${yesterday.addition}%` : undefined}
-                className={`table-cell__third-column ${yesterday.addition ? `table-cell_${yesterday.addition > 0 ? 'success' : yesterday.addition < 0 ? 'danger' : 'neutral'}` : ''}`}/>
-            <TableCell
-                value={`${currentDayOfTheWeek.value}`}
-                className={`table-cell__fourth-column ${currentDayOfTheWeek.addition ? `table-cell_${currentDayOfTheWeek.addition > 0 ? 'success' : currentDayOfTheWeek.addition < 0 ? 'danger' : 'neutral'}` : ''}`}/>
+            <TableCellOneSlot
+                firstSlot={indicator}
+                className="table-row__first-cell"/>
+            <TableCellOneSlot
+                firstSlot={`${today}`}
+                className="table-row__second-cell"/>
+            <TableCellTwoSlot
+                firstSlot={`${yesterday.value}`}
+                secondSlot={`${yesterday.addition}%`}
+                className= {`table-row__third-cell_${getColorClassNameByPrecentage(yesterday.addition)}`}/>
+            <TableCellOneSlot
+                firstSlot={`${currentDayOfTheWeek.value}`}
+                className={`table-row__fourth-cell_${getColorClassNameByPrecentage(currentDayOfTheWeek.addition)}`}/>
         </div>
     );
 };
