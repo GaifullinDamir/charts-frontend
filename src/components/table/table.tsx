@@ -52,7 +52,7 @@ const Table = ({data}: TableProps) => {
                     addition: getPercentageOfGrowth(today, data[7][key as keyof typeof indicators])
                 };
                 rowsData.push(
-                    {indicator, today, yesterday, currentDayOfTheWeek}
+                    {indicator, today, yesterday, currentDayOfTheWeek, chartName: key}
                 );
             }
         }
@@ -71,7 +71,8 @@ const Table = ({data}: TableProps) => {
                 indicator={rowData.indicator}
                 today={rowData.today}
                 yesterday={rowData.yesterday}
-                currentDayOfTheWeek={rowData.currentDayOfTheWeek}/>
+                currentDayOfTheWeek={rowData.currentDayOfTheWeek}
+                chartName={rowData.chartName}/>
         })
         return rows
     };

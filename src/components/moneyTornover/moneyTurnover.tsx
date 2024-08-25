@@ -17,6 +17,8 @@ const MoneyTurnover = () => {
 
     return (
         <div className="money-turnover">
+            {moneyTurnoverArrayIsLoading && <div className="label-info">Данные в загрузке</div>}
+            {moneyTurnoverArrayError && <div className="label-info">Ошибка загрузки</div>}
             {!moneyTurnoverArrayIsLoading && !moneyTurnoverArrayError && moneyTurnoverArray.length && <Table data={moneyTurnoverArray}/>}
         </div>
     );

@@ -9,4 +9,5 @@ export interface ITableRow {
         value: number | string;
         addition: number;
     };
+    chartName: string;
 }

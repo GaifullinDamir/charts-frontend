@@ -21,7 +21,7 @@ body {
 }
 
 .container {
-    min-height: 100vh;
+    height: 100vh;
     width: 991px;
     margin: 0 auto;
 }
@@ -29,5 +29,6 @@ body {
 @import './blocks/components/tableHeader';
 @import './blocks/components/tableCell';
 @import './blocks/components/tableRow';
-
 @import './blocks/components/table';
+@import './blocks/components/labelInfo';
+@import './blocks/components/moneyTurnover';
