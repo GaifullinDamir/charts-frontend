@@ -1,6 +1,12 @@
 .table-row {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+    transition: 0.3s all;
+    &:hover {
+        transform: scale(1.025);
+        background: var(--background-success);
+    }
     &__first-cell {
         width: 37%;
     }

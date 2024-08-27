@@ -1,7 +1,8 @@
 .table {
     width: 850px;
-    height: 580px;
-    margin: 0 auto;
+    min-height: 580px;
+    margin: auto;
+    margin-top: 50px;
     padding: 10px;
     border: 1px solid var(--font-color-base);
     border-radius: 5px;

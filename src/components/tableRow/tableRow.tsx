@@ -1,4 +1,5 @@
-import { TableCellOneSlot, TableCellTwoSlot } from "../";
+import { useState } from "react";
+import { TableCellOneSlot, TableCellTwoSlot, Highchart } from "../";
 import { ITableRow } from "../../models";
 
 const TableRow = ({
@@ -6,14 +7,20 @@ const TableRow = ({
     today,
     yesterday,
     currentDayOfTheWeek,
-    chartName
+    chartName,
+    chartData
     }: ITableRow) => {
 
     const getColorByPercentage= (percentage: number) => percentage > 0 ? 'success' : percentage < 0 ? 'danger' : 'neutral'; 
 
+    const [isChartVisible, setIsChartVisible] = useState(false);
+    console.log(chartName)
+
     return (
         <>
-        <div className='table-row'>
+        <div 
+            className='table-row'
+            onClick={() => setIsChartVisible(isChartVisible => !isChartVisible)}>
             <TableCellOneSlot
                 firstSlot={indicator}
                 className="table-row__first-cell"/>
@@ -28,7 +35,7 @@ const TableRow = ({
                 firstSlot={`${currentDayOfTheWeek.value}`}
                 className={`table-row__fourth-cell table-row-cell_${getColorByPercentage(currentDayOfTheWeek.addition)}`}/>
         </div>
-        <div className={`highchart-${chartName}`}></div>
+        <Highchart data={chartData} isVisible={isChartVisible} text={chartName}/>
         </>
     );
 };

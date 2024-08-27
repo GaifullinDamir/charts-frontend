@@ -3,6 +3,7 @@ import { Table } from "./table";
 import { TableHeader } from "./tableHeader";
 import { TableRow } from "./tableRow";
 import { TableCellOneSlot, TableCellTwoSlot, TableCellHeader } from "./tableCell";
+import { Highchart } from "./highchart";
 
 export {
     MoneyTurnover,
@@ -13,5 +14,6 @@ export {
     TableRow,
     TableCellOneSlot,
     TableCellTwoSlot,
-    TableCellHeader
+    TableCellHeader,
+    Highchart
 }

@@ -10,4 +10,5 @@ export interface ITableRow {
         addition: number;
     };
     chartName: string;
+    chartData?: number[];
 }

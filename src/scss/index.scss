@@ -26,6 +26,14 @@ body {
     margin: 0 auto;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 @import './blocks/components/tableHeader';
 @import './blocks/components/tableCell';
 @import './blocks/components/tableRow';

@@ -1,6 +1,5 @@
 import { IMoneyTurnover, ITableRow } from "../../models";
-import { TableHeader } from "../tableHeader";
-import { TableRow } from "../tableRow";
+import { TableHeader, TableRow } from "../";
 
 type TableProps = {
     tableName?: string;
@@ -51,8 +50,18 @@ const Table = ({data}: TableProps) => {
                     value: data[7][key as keyof typeof indicators],
                     addition: getPercentageOfGrowth(today, data[7][key as keyof typeof indicators])
                 };
+                const chartData = data.map((item) => {
+                    return item[key as keyof typeof indicators];
+                })
                 rowsData.push(
-                    {indicator, today, yesterday, currentDayOfTheWeek, chartName: key}
+                    {
+                        indicator,
+                        today,
+                        yesterday,
+                        currentDayOfTheWeek,
+                        chartName: indicators[key as keyof typeof indicators],
+                        chartData: chartData.slice(0, 7)
+                    }
                 );
             }
         }
@@ -66,13 +75,18 @@ const Table = ({data}: TableProps) => {
      */
     const createRowsElements = (rowsData: ITableRow[]): JSX.Element[] => {
         const rows = rowsData.map(rowData => {
-            return <TableRow
+            return <>
+                <TableRow
                 key={rowData.indicator}
                 indicator={rowData.indicator}
                 today={rowData.today}
                 yesterday={rowData.yesterday}
                 currentDayOfTheWeek={rowData.currentDayOfTheWeek}
-                chartName={rowData.chartName}/>
+                chartName={rowData.chartName}
+                chartData={rowData.chartData}
+                />
+                
+            </>
         })
         return rows
     };
