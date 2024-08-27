@@ -60,7 +60,7 @@ const Table = ({data}: TableProps) => {
                         yesterday,
                         currentDayOfTheWeek,
                         chartName: indicators[key as keyof typeof indicators],
-                        chartData: chartData.slice(0, 7)
+                        chartData: chartData.slice(0, 8)
                     }
                 );
             }
